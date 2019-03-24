@@ -35,4 +35,11 @@ class UI {
 		</div>
 			`;
   }
+  
+  showLoader(){
+    this.profile.innerHTML = ` 
+			<div class="spinner-grow text-primary" style="position: absolute; left: 45%;" role="status">
+					<span class="sr-only"></span>
+			</div>`;
+  }
 }

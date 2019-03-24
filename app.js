@@ -7,10 +7,11 @@ input.addEventListener('keyup', function (e) {
     const ui = new UI;
 
     if(userName !== ''){
+        ui.showLoader();
         github.getUser(userName)
             .then(user => {
                 if(user.message == 'Not Found'){
-                    ui.showAlert('Sorry, user is not found')
+                    ui.showAlert('Sorry, user is not found');
                 }else{
                     ui.showProfile(user);
                 }
