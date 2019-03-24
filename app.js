@@ -4,14 +4,15 @@ input.addEventListener('keyup', function (e) {
     const userName = e.target.value;
     
     const github = new GitHub;
+    const ui = new UI;
 
     if(userName !== ''){
         github.getUser(userName)
             .then(user => {
                 if(user.message == 'Not Found'){
-                    //show alert
+                    ui.showAlert('Sorry, user is not found')
                 }else{
-                    //show profile
+                    ui.showProfile(user);
                 }
         })
     }
